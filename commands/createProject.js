@@ -11,19 +11,13 @@ const { PROJECT_TEMPLATE_DIR } = require("../constants");
  * @returns {Promise<void>}
  */
 module.exports = (project, projectPath) => {
-  if (!fs.existsSync(projectPath)) {
-    try {
-      fs.copySync(PROJECT_TEMPLATE_DIR, projectPath);
-      signale.success(
-        `The ${project} project has been created successfully at ${projectPath}`
-      );
-      process.exit(0);
-    } catch (error) {
-      signale.fatal(error);
-      process.exit(1);
-    }
-  } else {
-    signale.error(`The ${project} already exists at ${projectPath}`);
+  try {
+    fs.copySync(PROJECT_TEMPLATE_DIR, `${projectPath}/setup_files`);
+    signale.success(
+      `The ${project} project has been created successfully at ${projectPath}`
+    );
+  } catch (error) {
+    signale.fatal(error);
     process.exit(1);
   }
 };

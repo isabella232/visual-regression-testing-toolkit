@@ -1,0 +1,4 @@
+﻿url,referenceUrl,viewports,threshold
+https://jetpack.com/,https://jetpack.com/?jb-disable-modules=critical-css,"1600x1050,1200x800,640x480",1
+https://jetpack.com/features/,https://jetpack.com/features/?jb-disable-modules=critical-css,"1600x1050,1200x800,640x480",1
+https://jetpack.com/support/,https://jetpack.com/support/?jb-disable-modules=critical-css,"1600x1050,1200x800,640x480",1

@@ -1,5 +1,4 @@
-const args = require("yargs").argv;
-const { BACKSTOP_DEFAULT_VIEWPORT } = require("../constants");
+const args = require("yargs/yargs")(process.argv.slice(2)).argv;
 
 /**
  * Get arguments
@@ -17,10 +16,6 @@ module.exports = () => {
     commandToRun = "deleteProject";
   }
 
-  if (args.resetProject) {
-    commandToRun = "resetProject";
-  }
-
   if (args.reference) {
     commandToRun = "reference";
   }
@@ -29,18 +24,35 @@ module.exports = () => {
     commandToRun = "test";
   }
 
-  if (args.approve) {
-    commandToRun = "approve";
-  }
-
   if (args.openReport) {
     commandToRun = "openReport";
   }
 
+  if (args.showTestsStats) {
+    commandToRun = "showTestsStats";
+  }
+
+  if (args.openFinalReport) {
+    commandToRun = "openFinalReport";
+  }
+
+  if (args.reset) {
+    commandToRun = "reset";
+  }
+
+  if (args.h) {
+    commandToRun = "help";
+  }
+
   return {
-    project: args.p,
+    csvFileName: args.csv,
+    projectName: args.p,
     url: args.u,
-    view: args.v || BACKSTOP_DEFAULT_VIEWPORT,
+    referenceUrl: args.r ? args.r : args.u,
+    viewports: args.v,
+    threshold: args.t,
+    debug: !!args.d,
+    force: !!args.force,
     commandToRun,
   };
 };

@@ -20,11 +20,17 @@ node_modules/
 # BackstopJS Test Data
 **/bitmaps_reference/**
 **/bitmaps_test/**
-**/html_report/**
 
 # BackstopJS Project Data
 projects/*
-!projects/template/
+
+# BackstopJS Final Report Data
+final_report/json/jsonFinalReport.json
+final_report/html/config.js
 
 # BackstopJS Config Files
 backstop*.json
+
+*.csv
+!sample-csv-file-advanced.csv
+!sample-csv-file-simple.csv
