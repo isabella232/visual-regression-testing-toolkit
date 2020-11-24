@@ -16,6 +16,10 @@
     "eslint-plugin-prettier": "^3.1.4",
     "prettier": "^2.1.2"
   },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:xwp/visual-regression-testing-toolkit.git"
+  },
   "dependencies": {
     "backstopjs": "^5.0.6",
     "chalk": "^4.1.0",
